@@ -9,24 +9,26 @@
     box-sizing: border-box;
 }
 
-:root{
+:root {
     --mainTextColor: #ececec;
     --darkTextColor: #20252d;
     --bgColor: #dbdbdb;
 }
+
 /* custom class  */
 .full-height-vh {
     height: 100vh;
 }
 
 /* ------------ */
-@keyframes text_effect{
-    from{
+@keyframes text_effect {
+    from {
         opacity: 0;
         scale: 0.5;
-        transform: translateY(100px);
+        transform: translateY(150px);
     }
-    to{
+
+    to {
         opacity: 1;
         scale: 1;
         transform: translateY(0);
@@ -67,35 +69,38 @@
     left: 10px;
     color: #fff;
     animation: text_effect .5s linear;
+    /* animation-timeline: view();
+    animation-range: entry 0% cover 40%; */
 }
-.header_with_transtion  h1{
+
+.header_with_transtion h1 {
     color: var(--mainTextColor);
     font-size: 5rem;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     animation: text_effect;
-    animation-timeline: view();
-    animation-range: entry 0% cover 40%;
 }
+
 /* -------------------- */
 /* about sec  */
-.about{
+.about {
     height: 90vh;
     background-color: var(--bgColor);
 }
-.about .aboutTitle{
+
+.about .aboutTitle {
     height: 55vh;
+    animation: text_effect .5s linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
 }
-.about .aboutTitle h1{
-    font-family: "Shadows Into Light", cursive ;
+
+.about .aboutTitle h1 {
+    font-family: "Shadows Into Light", cursive;
     font-size: 5em;
-    letter-spacing:  10px;
+    letter-spacing: 10px;
 }
-@media only screen and (max-width: 720px) {
-    .about .aboutTitle h1{
-        font-size: 3em;
-    }
-  }
-.about .aboutText{
+
+.about .aboutText {
     background-color: var(--darkTextColor);
     height: 35vh;
     color: var(--mainTextColor);
@@ -103,8 +108,41 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: 10px;
+    padding: 10px 100px;
 }
-.aboutText p{
+
+.aboutText p {
     flex-basis: 48%;
     text-align: justify;
+}
+@media only screen and (max-width: 720px) {
+    .about{
+        height: 100vh;
+    }
+    .about .aboutTitle{
+        height: 50vh;
+    }
+    .about .aboutTitle h1 {
+        font-size: 3em;
+    }
+
+    .about .aboutText {
+        flex-direction: column;
+        height: 50vh;
+        font-size: 14px;
+        padding: 10px 10px;
+        justify-content: center;
+    }
+    .aboutText p {
+        flex-basis: 0;
+    }
+}
+/* ------------------- */
+.bookingCards{
+    background-color: var(--mainTextColor);
+}
+
+.bookingCards h2{
+    font-family: "Shadows Into Light", cursive;
+    letter-spacing: 6px;
 }
